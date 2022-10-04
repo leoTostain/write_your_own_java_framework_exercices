@@ -88,7 +88,12 @@ public final class InjectorRegistry {
         });
     }
 
-    public <T> void registerProviderClass(Class<T> type) {
+    public void registerProviderClass(Class<?> type) {
+        requireNonNull(type);
+        registerProviderClass0(type);
+    }
+
+    private <T> void registerProviderClass0(Class<T> type) {
         registerProviderClass(type, type);
     }
 }
