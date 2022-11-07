@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class InterceptorRegistryTest {
-  /*
+
   @Nested
   public class Q1 {
 
@@ -125,7 +125,7 @@ public class InterceptorRegistryTest {
   } // end Q1
 
 
-  @Nested
+  /*@Nested
   public class Q2 {
     @Retention(RUNTIME)
     @Target(METHOD)
@@ -205,7 +205,7 @@ public class InterceptorRegistryTest {
       var proxy = registry.createProxy(Hello.class, hello);
       assertEquals("foo bar", proxy.say("hello", "world"));
     }
-  }  // end of Q2
+  }  // end of Q2*/
 
 
   @Nested
@@ -537,6 +537,8 @@ public class InterceptorRegistryTest {
 
   @Nested
   class Q6 {
+    @Retention(RUNTIME)
+    @interface Example1 {}
     @Test @Tag("Q6")
     public void cacheCorrectlyInvalidated() {
       interface Foo {
@@ -601,6 +603,4 @@ public class InterceptorRegistryTest {
       assertEquals("-hello-", foo.hello("hello"));
     }
   }  // end Q7
-
-  */
 }
